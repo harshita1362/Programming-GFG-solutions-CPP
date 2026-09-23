@@ -1,0 +1,15 @@
+/*
+Sum of two numbers without using arithmetic operators
+Given two integers a and b. Find the sum of two numbers without using arithmetic operators.
+*/
+class Solution {
+	public:
+	int sum(int a, int b) {
+		while (b != 0) {
+			int carry = (a & b) << 1;
+			a = a ^ b;
+			b = carry;
+		}
+		return a;
+	}
+};
