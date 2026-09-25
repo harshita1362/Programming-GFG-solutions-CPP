@@ -11,3 +11,18 @@ class Solution {
 		return s;
 	}
 };
+
+class Solution {
+	public:
+	string reverseSort(string &s) {
+		int freq[26] = {0};
+		for (char c : s)
+			freq[c - 'a']++;
+		int k = 0;
+		for (int i = 25; i >= 0; i--) {
+			while (freq[i]--)
+				s[k++] = 'a' + i;
+		}
+		return s;
+	}
+};
